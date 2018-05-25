@@ -65,7 +65,6 @@ export default class GraphNetwork {
         let toIdx = this.getIdx(to);
         let af = Af.New(this.g,fromIdx,toIdx);
         let chains = af.GetResult();
-        console.log("@@@>", chains);
         return this.loadAsChains(chains.chains);
     }
 
@@ -88,7 +87,6 @@ export default class GraphNetwork {
         for (let i = 0; i < this.labels.length; i++) {
             let searchFrom = this.labels[i];
             let ch = this.GetChains(searchFrom, to);
-            console.log("###>", searchFrom, to, ch);
             chAll = chAll.concat(ch);
         }
         return chAll;
@@ -102,16 +100,10 @@ export default class GraphNetwork {
         for (;labelsTodo.length>0;) {
             let chs = this.getAllChains(orph);
 
-            // console.log("+++>",chs);
-
             chCollections = chCollections.concat(chs);
             let usedLabels = [to].concat(this.getChainsLabels(chs));
 
-            // console.log("===>",labelsTodo, usedLabels);
-
             labelsTodo = this.removeLabels(labelsTodo, usedLabels);
-
-            // console.log(labelsTodo);
 
             count++;
 

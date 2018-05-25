@@ -7,6 +7,7 @@
  * Created by duguying on 2018/5/25.
  */
 import Vertex from "./vertex";
+import ArrayList from "./arraylist";
 
 export default class Graph {
     private vertexList : Vertex[] = [];
@@ -42,6 +43,18 @@ export default class Graph {
 
     public GetVertexList() : Vertex[] {
         return this.vertexList;
+    }
+
+    public SetVertexListAllVisitedList(i : number, tempList : ArrayList){
+        this.vertexList[i].SetAllVisitedList(tempList)
+    }
+
+    public SetVertexListWasVisited(i : number, wasVisited : boolean){
+        this.vertexList[i].SetWasVisited(wasVisited)
+    }
+
+    public SetVertexListVisited(i: number, visited : number) {
+        this.vertexList[i].SetVisited(visited)
     }
 
     public GetVertexListLabel() : string[] {
@@ -86,10 +99,10 @@ export default class Graph {
         let c = "";
 
         for (let k = 0; k < this.vertsNum; k++) {
-            c = `第 ${this.DisplayVertex(k)} 个节点：`;
+            c = c + `第 ${k} 个节点：${this.DisplayVertex(k)}\t`;
 
             for (let l = 0; l < this.vertsNum; l++) {
-                c = c + `[${this.DisplayVertex(k)}-${this.DisplayVertex(l)}]: ${this.adjMatrix[k][l]}`
+                c = c + `[${this.DisplayVertex(k)}-${this.DisplayVertex(l)}]: ${this.adjMatrix[k][l]}\t`
             }
 
             c = c + "\n"

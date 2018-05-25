@@ -13,6 +13,12 @@ let gn = GraphNetwork.New();
 
 gn.AddRelation("A", "B").AddRelation("C", "B").AddRelation("B", "D").AddExtraVertex("E");
 
-let ch = gn.Done().GetAllChains("E");
+let ch = gn.Done();
 
-console.log(ch);
+// console.log(ch);
+
+ch.GetGraph().PrintGraph();
+
+let chs = ch.GetAllChains("E");
+
+console.log(chs);

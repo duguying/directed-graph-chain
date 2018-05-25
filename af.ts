@@ -41,7 +41,8 @@ export default class Af {
                 for (let i = 0; i < this.n; i++) {
                     this.tempList.Add(0)
                 }
-                this.g.GetVertexList()[j].SetAllVisitedList(this.tempList)
+                // this.g.GetVertexList()[j].SetAllVisitedList(this.tempList)
+                this.g.SetVertexListAllVisitedList(j, this.tempList)
             }
             this.isAf = this.af(this.start, this.end)
         }
@@ -49,7 +50,8 @@ export default class Af {
     }
 
     private af(start : number, end : number) : boolean {
-        this.g.GetVertexList()[start].SetWasVisited(true);
+        // this.g.GetVertexList()[start].SetWasVisited(true);
+        this.g.SetVertexListWasVisited(start, true);
         this.theStack.Push(start);
 
         for(;!this.theStack.Empty();){
@@ -59,14 +61,16 @@ export default class Af {
                 for (let j = 0; j < this.n; j++) {
                     this.tempList.Add(0);
                 }
-                this.g.GetVertexList()[<number>this.theStack.Peak()].SetAllVisitedList(this.tempList);
+                // this.g.GetVertexList()[<number>this.theStack.Peak()].SetAllVisitedList(this.tempList);
+                this.g.SetVertexListAllVisitedList(<number>this.theStack.Peak(), this.tempList);
                 this.theStack.Pop();
             }else {
                 this.theStack.Push(v);
             }
 
             if (!this.theStack.Empty() && end == this.theStack.Peak()) {
-                this.g.GetVertexList()[end].SetWasVisited(false);
+                // this.g.GetVertexList()[end].SetWasVisited(false);
+                this.g.SetVertexListWasVisited(end, false);
                 this.finalChains.push(this.asChain());
                 this.theStack.Pop();
             }
@@ -79,9 +83,10 @@ export default class Af {
         let queue = new ArrayList();
         let visited = new ArrayList();
         queue.Add(start);
+
         for(;!queue.IsEmpty();){
             for (let j = 0; j < this.n; j++) {
-                if (this.g.GetAdjMatrix()[start][j]==-1 && !visited.Contains(j)){
+                if (this.g.GetAdjMatrix()[start][j]==1 && !visited.Contains(j)){
                     queue.Add(j)
                 }
             }
@@ -102,7 +107,8 @@ export default class Af {
         let al = this.g.GetVertexList()[v].GetAllVisitedList();
         for (let j = 0; j < this.n; j++) {
             if (this.g.GetAdjMatrix()[v][j] == 1 && (<number>al.Get(j)) == 0 && !this.theStack.Contains(j)) {
-                this.g.GetVertexList()[v].SetVisited(j);
+                // this.g.GetVertexList()[v].SetVisited(j);
+                this.g.SetVertexListVisited(v, j);
                 return j;
             }
         }

@@ -31,7 +31,13 @@ export default class ArrayList {
     }
 
     public Remove(i : number) {
-        this.list.splice(i)
+        let ls : Object[] = [];
+        for (let j = 0; j < this.list.length; j++) {
+            if (j != i) {
+                ls.push(this.list[j]);
+            }
+        }
+        this.list = ls
     }
 
     public Contains(e : Object) : boolean {
