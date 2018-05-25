@@ -1,0 +1,7 @@
+node_modules/
+.git/
+.idea/
+typings/
+package-lock.json
+*.js
+*.map
