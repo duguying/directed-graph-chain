@@ -10,7 +10,7 @@ import Graph from "./graph";
 import Stack from "./stack";
 import ArrayList from "./arraylist";
 
-interface Result {
+export interface Result {
     af : boolean
     chains : string[][]
 }

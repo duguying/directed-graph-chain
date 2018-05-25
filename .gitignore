@@ -2,6 +2,7 @@ node_modules/
 .git/
 .idea/
 typings/
+dist/
 package-lock.json
 *.js
 *.map

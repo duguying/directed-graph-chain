@@ -9,7 +9,7 @@
 import Graph from "./graph";
 import Af from "./af";
 
-type Chain = string[];
+export type Chain = string[];
 
 export default class GraphNetwork {
     private g : Graph = new Graph();
