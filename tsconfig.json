@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "module": "amd",
+    "module": "commonjs",
     "target": "es5",
     "sourceMap": true,
     "declaration": true,
-    "outFile": "./dist/dGraph.js"
+    "outDir": "./dist"
   },
   "exclude": [
     "node_modules",

@@ -96,7 +96,6 @@ export default class GraphNetwork {
         let labelsTodo = this.labels;
         let orph = to;
         let chCollections : Chain[] = [];
-        let count : number = 0;
         for (;labelsTodo.length>0;) {
             let chs = this.getAllChains(orph);
 
@@ -104,12 +103,6 @@ export default class GraphNetwork {
             let usedLabels = [to].concat(this.getChainsLabels(chs));
 
             labelsTodo = this.removeLabels(labelsTodo, usedLabels);
-
-            count++;
-
-            if (count > 10) {
-                break
-            }
 
             if (labelsTodo.length > 0) {
                 orph = labelsTodo[0];
@@ -161,14 +154,32 @@ export default class GraphNetwork {
         return lbs
     }
 
+    private sort(chCollects : Chain[]) : Chain[] {
+        let i, j : number;
+        let arr : Chain[] = chCollects;
+        let len : number = chCollects.length;
+        let mid : Chain;
+        for (i = 0; i < len - 1; i++) {
+            for (j = 0; j < len - 1 - i; j++) {
+                if (arr[j].length < arr[j + 1].length) {
+                    mid = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = mid;
+                }
+            }
+        }
+        return arr;
+    }
+
     private filterExtraSubChain(chCollects : Chain[]) : Chain[] {
-        let ccls = chCollects;
-        ccls.reverse();
+        let ccls = this.sort(chCollects);
         let ccfo : string[] = [];
         for (let i = 0; i < ccls.length; i++) {
             for (let j = i + 1; j < ccls.length; j++) {
-                if ((ccls[i].join("")).indexOf(ccls[j].join("")) > -1) {
-                    ccfo.push(ccls[j].join(""))
+                let str:string = (ccls[i].join(""));
+                let substr = ccls[j].join("");
+                if (str.indexOf(substr) > -1) {
+                    ccfo.push(substr)
                 }
             }
         }
