@@ -206,4 +206,8 @@ export default class GraphNetwork {
     }
 }
 
+declare global {
+    interface Window { GraphNetwork: any; }
+}
 
+window.GraphNetwork = window.GraphNetwork || GraphNetwork;
