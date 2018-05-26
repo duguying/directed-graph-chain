@@ -7,7 +7,7 @@
  * Created by duguying on 2018/5/25.
  */
 
-import GraphNetwork from "./wrapper"
+import GraphNetwork from "../src/wrapper"
 
 let gn = GraphNetwork.New();
 
