@@ -1,6 +1,9 @@
 {
   "name": "directed-graph",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description" : "A packaged to calculate chain of directed-graph",
+  "main" : "src/wrapper.ts",
+  "email" : "root@duguying.net",
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.1.3",
