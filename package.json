@@ -1,5 +1,5 @@
 {
-  "name": "directed-graph",
+  "name": "directed-graph-chain",
   "version": "1.0.0",
   "description" : "A packaged to calculate chain of directed-graph",
   "main" : "src/wrapper.ts",
