@@ -206,8 +206,14 @@ export default class GraphNetwork {
     }
 }
 
-declare global {
-    interface Window { GraphNetwork: any; }
+interface Window {
+    GraphNetwork: any
 }
 
-window.GraphNetwork = window.GraphNetwork || GraphNetwork;
+interface Global {
+    GraphNetwork: any
+}
+
+let globalObj:any = typeof window !== 'undefined' ? window : global;
+
+globalObj.GraphNetwork = GraphNetwork;
