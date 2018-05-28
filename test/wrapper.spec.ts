@@ -21,5 +21,7 @@ let ch = gn.Done();
 // ch.GetGraph().PrintGraph();
 
 let chs = ch.GetAllChains("A1");
+let chs2 = ch.GetAllChains("A2");
 
 console.log(chs);
+console.log(chs2);
