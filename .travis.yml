@@ -7,6 +7,8 @@ deploy:
   provider: releases
   api_key:
     secure: esXADhNFNTwu8vZYaZMk+lsa2zf+tLwDFUR+6pfod0vFww2c2VSjCwXZYbw5KzJ+7ByEKF4i1s4yqZjAAeOMdOZo7iHJZytd0bsoyLekUBvpRLHn2Iubc0T2Rtp6BmUfHSDtme/3GztyuO9xWMwrjGlaVCnyuAtOfLLQtmN9kU1zApQcN2Oh4xcIDQCHYuMPBpYx1Ni2BQXgwnsKZq4C0S2eE9sy/XTxIvsR7ejD7SydgrKHzQeh/UWiCgRIchdBjA7VngrOIXWk572lGlOc98WIzPf18fFObP4RG2XADlUZNDGKx/4D+epIwWp3L95w6Mvft7zt4RaTJEmlcd2YhISkeRGtGsvgckII6L+KvOd+SkHUJrcu/9eAbElvnXZKEIp9QbbHlIRCussq6OnWQ1kUG9v9lh3m2QLLLp8qw7if84uqEnQpYLsph7oprXem36muR0gEaK00RNCk7wsqwcNQ0kbF5hdh0yybe8CbXGy3E1HcRBnLvhjA0IJ8r2fOGQC3sdp7xi9P9T14878n9nTqXsPGjMvGLEvQa8oUmUM15rC/JK07r1vwF7CqHn9il/+BxOaTRoXV6rBs7KAbh26JAZPoJhounSYhsZiWsxtEyIZFOjkVnPIxrWbLJtn5h4DsN7hgwyTZMBc9tzBme50QyRozPY+48p46JBAYnVQ=
+  file_glob: true
   file: dist/*.js
   on:
     repo: duguying/directed-graph-chain
+    tags: true
