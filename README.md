@@ -1,4 +1,4 @@
-## 有向图
+## 有向图 [![Build Status](https://travis-ci.org/duguying/directed-graph-chain.svg?branch=master)](https://travis-ci.org/duguying/directed-graph-chain)
 
 查找有向图的链路
 
