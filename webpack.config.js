@@ -9,6 +9,8 @@
 
 const path = require('path');
 
+const version = require("./package.json").version;
+
 module.exports = {
     entry: './src/wrapper.ts',
     module: {
@@ -28,7 +30,7 @@ module.exports = {
         extensions: [ ".ts", ".tsx", ".js" ]
     },
     output: {
-        filename: 'd-graph.js',
+        filename: `d-graph-${version}.js`,
         path: path.resolve(__dirname, 'dist')
     }
 };

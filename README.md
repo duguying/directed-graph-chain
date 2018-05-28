@@ -4,7 +4,7 @@
 
 ### 图
 
-[![graph](https://raw.githubusercontent.com/duguying/directed-graph-chain/master/directed-graph-chain/graph.png)](https://raw.githubusercontent.com/gogather/algorithm/master/directed-graph/graph.png)
+[![graph](https://raw.githubusercontent.com/duguying/directed-graph-chain/master/graph.png)](https://raw.githubusercontent.com/duguying/directed-graph-chain/master/graph.png)
 
 
 ### 链路
