@@ -31,6 +31,6 @@ module.exports = {
     },
     output: {
         filename: `d-graph-${version}.js`,
-        path: path.resolve(__dirname, 'dist/release')
+        path: path.resolve(__dirname, 'dist')
     }
 };
