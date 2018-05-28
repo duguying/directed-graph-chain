@@ -1,8 +1,6 @@
 language: node_js
 node_js:
   - "7"
-before_script:
-  - "npm install"
 script:
   - "npm run build"
 deploy:
@@ -10,7 +8,7 @@ deploy:
   api_key:
     secure: "UKFjohq+VUvjaXzR1MHy/PkQdTpmt8KAwRpJ566jLzQW7kTKyOgFrf63zshTazhfkiOUcltfr+pRwjTJSK7W/n01y7k9O/nngYE+mi8kLZG4mP5uHfA2HbnIegUgIxfNpdVmvEAnAwtgb8b62COACPH458pfl/tE/NZ7w+JI7djyyVEVxC9G6wTrurMSld4bGGjM74vmgM9sBB4NLmwXkPb3mSfAAeWc3Lbdz9yvnEdh3ovMQdSj4Gwv8dTiELRffT3o9ZJ1TQsooRU83XgZLREJCeaxMH1Hf13c+7FOMPmxdeRyiHHrh346Zqgib9DAjwHESJsiTTjS5OryipDLSNfEbPW+5KVoSVbjTPvtJ2/w0Vlk4au5lEqI2nCDxMnVSVpTFRycUnVRXv7kxNFpj3JEvi7XLOJX0cW3Cq05pcvKsC2nBESeFZsHdhSpWaBS5lHsYkIt1/EjQntr37806O8HdY/vj9zAORMSC3WCPFr8/64YC4vn/RPJm3bsmHjnSz1RLmR7BBdlRxBNPrcZ/ZjRl3OAmr+M3/e43EagtvNuEi8a1M3kQNv8ImI+VLLjUWgJCYukyacjjiZY5njXPAOOG/MoFijkaNA6TclJRcrwD24cJOnhP9DesOEUQZA4PTzMflCZQDa/kNCSbFUAOG+ZVQFAkbjdJGtiFV9kfe8="
   file_glob: true
-  file: dist/d-graph-*.js
+  file: dist/*.js
   on:
     repo: duguying/directed-graph-chain
     tags: true
